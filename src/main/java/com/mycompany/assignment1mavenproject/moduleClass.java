@@ -5,13 +5,29 @@
  */
 package com.mycompany.assignment1mavenproject;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author MacdaraDay
  */
 public class moduleClass {
     
-    public moduleClass(){
-        
+    private String moduleName;
+    private String moduleCode;
+    private ArrayList<String> students;
+    private ArrayList<String> courses;
+    
+    public moduleClass(String moduleName, String moduleCode){
+        this.moduleName = moduleName;
+        this.moduleCode = moduleCode;
+    }
+    
+    public void addStudents(String name){
+        students.add(name);
+    }
+    
+    public ArrayList<String> getStudents(){
+        return students;
     }
 }
