@@ -5,9 +5,9 @@
  */
 package com.mycompany.assignment1mavenproject;
 
-import static java.lang.Integer.max;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
+import org.joda.time.LocalDate;
 
 public class studentClass {
     
@@ -17,9 +17,10 @@ public class studentClass {
     private int ID = 0;
     private String username;
     private String course;
-    private String modules;
-    private courseprogrammeClass Course = new courseprogrammeClass();
+    private LocalDate academicStartDate = new LocalDate(2018,9,01);
+    private LocalDate academicEndDate = new LocalDate(2018,12,22);
     
+   
     public studentClass(){
     }
     
@@ -30,6 +31,13 @@ public class studentClass {
         this.course=course;
         setUsername(name, age);
         this.username=getUsername();
+        addtoCourse(course, academicStartDate, academicEndDate);
+    }
+    public String getName(){
+        return name;
+    }
+    public String getDOB(){
+        return DOB;
     }
     public void setUsername(String name, int age){
         char a_char = name.charAt(0);
@@ -37,6 +45,7 @@ public class studentClass {
         username = a_char + splited[1] + age;
         setID();
         ID = getID();
+        System.out.println("Created new student "+getName()+" with username  "+getUsername()+" and ID "+getID());
     }
     public void setID(){
         if(ID==0){
@@ -47,22 +56,27 @@ public class studentClass {
             ID=ID;
         }
     }
+    public void addtoCourse(String courseName, LocalDate academicStartDate,LocalDate academicEndDate){
+       courseprogrammeClass Course = new courseprogrammeClass(name, courseName, academicStartDate, academicEndDate);
+        Course.addCourse(name);
+    }
     public int getID(){
         return ID;
     }
     public String getUsername(){
         return username;
     }
-    public void addtoCourse(){
-        if("ECE".equals(course)){
-            Course.ECE(name, username, ID);
-        }
-        else if("CSIT".equals(course)){
-            Course.CSIT(name, username, ID);
-        }
+    public String getCourse(){
+        return course;
     }
-    public void students(){
-        Course.Students();
+
+    public void printoutECEstudents() {
+         ArrayList<String> ECEnames = courseprogrammeClass.getECEstudents();
+         System.out.println("ECE students are: "+ECEnames);
+    }
+    public void printoutCSITstudents() {
+         ArrayList<String> CSITnames = courseprogrammeClass.getCSITstudents();
+         System.out.println("CSIT students are: "+CSITnames);
     }
 }
 
