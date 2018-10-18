@@ -45,7 +45,6 @@ public class studentClass {
         username = a_char + splited[1] + age;
         setID();
         ID = getID();
-        System.out.println("Created new student "+getName()+" with username  "+getUsername()+" and ID "+getID());
     }
     public void setID(){
         if(ID==0){
@@ -62,6 +61,9 @@ public class studentClass {
     }
     public int getID(){
         return ID;
+    }
+    public int getAge(){
+        return age;
     }
     public String getUsername(){
         return username;

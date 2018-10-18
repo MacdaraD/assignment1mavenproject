@@ -17,37 +17,65 @@ public class courseprogrammeClass {
     
     private static ArrayList<String> ECEmodules = new ArrayList<String>(Arrays.asList("System on Chip","Software Engineering"));
     private static ArrayList<String> CSITmodules = new ArrayList<String>(Arrays.asList("Software Engineering", "Web Design"));
+    private static ArrayList<studentClass> SystemonChip = new ArrayList<studentClass>(); 
     private static ArrayList<String> ECEstudents = new ArrayList<String>();
     private static ArrayList<String> CSITstudents = new ArrayList<String>();
     //private static moduleClass modules = new moduleClass();
-    private String studentname;
+    private String studentName;
+    private String courseName;
     private moduleClass module;
-    private LocalDate academicStartDate = new LocalDate(2018,9,1);
-    private LocalDate academicEndDate = new LocalDate(2018,12,21);
+    private LocalDate academicStartDate;
+    private LocalDate academicEndDate;
     
-    
-    public courseprogrammeClass() {
-       
+    public courseprogrammeClass(String studentName,String courseName, LocalDate academicStartDate,LocalDate academicEndDate) {
+       this.studentName = studentName;
+        this.courseName = courseName;
+       this.academicStartDate = academicStartDate;
+       this.academicEndDate = academicEndDate;
     }
-    public void ECE(String name, String username, int ID){
-        this.studentname = name;
-        String id = Integer.toString(ID);
-        ECEstudents.add(studentname+" "+id);
-        System.out.println(username+" "+id+" added to ECE");
-        for(int i = 0;i<ECEmodules.size();i++){
-           String moduleName = ECEmodules.get(i);
-           
+
+    courseprogrammeClass() {
+    }
+
+    public String getcourseName(){
+        return courseName;
+    }
+    public LocalDate getacademicStartDate(){
+        return academicStartDate;
+    }
+    public LocalDate getacademicEndDate(){
+        return academicEndDate;
+    }
+    public void addCourse(String studentName){
+        if("ECE".equals(courseName)){
+            ECEstudents.add(studentName);
+            addECEmodules();
+        }
+        else if("CSIT".equals(courseName)){
+            CSITstudents.add(studentName);
+            addCSITmodules();
+        }
+        else{
+            System.out.println("Course "+courseName+" not found.");
         }
     }
-    public void CSIT(String name, String username, int ID){
-        this.studentname=name;
-        String id = Integer.toString(ID);
-        CSITstudents.add(studentname+" "+id);
-        System.out.println(username+" "+id+" added to CS&IT");
-        for(int i = 0;i<CSITmodules.size();i++){
-           String moduleName = CSITmodules.get(i);
-           
+    public void addECEmodules(){
+        for(String temp : ECEmodules){
+            
+            System.out.println("Attempting to add "+studentName +" to "+temp);
         }
+    }
+    public void addCSITmodules(){
+        for(String temp : CSITmodules){
+            
+            System.out.println("Attempting to add "+studentName +" to "+temp);
+        }
+    }
+    public static ArrayList getECEstudents(){
+        return ECEstudents;
+    }
+    public static ArrayList getCSITstudents(){
+        return CSITstudents;
     }
     public void Students(){
         System.out.println("ECE students "+ECEstudents);
