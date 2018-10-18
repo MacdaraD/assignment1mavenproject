@@ -27,7 +27,7 @@
         <dependency>
 	    <groupId>com.github.MacdaraD</groupId>
 	    <artifactId>assignment1mavenproject</artifactId>
-            <version>0.1</version>
+            <version>master</version>
 	</dependency>
     </dependencies>
     <repositories>

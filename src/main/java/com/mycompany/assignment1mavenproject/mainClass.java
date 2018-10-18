@@ -16,9 +16,16 @@ public class mainClass {
      * @param args the command line arguments
      */
     
+    
     public static void main(String[] args) {
-        studentClass exampleStudent = new studentClass("Macdara Day",22,"06/10/1996","ECE");
-        String username = exampleStudent.getUsername();
-        System.out.println(username);
+        studentClass exampleECEStudent = new studentClass("Macdara Day",22,"06/10/1996","ECE");
+        studentClass exampleCSITStudent = new studentClass("Conn O'Flynn",21,"23/08/1996","CSIT");
+        studentClass exampleECEStudent1 = new studentClass("Ronan Murphy",20,"30/01/1998","ECE");
+        studentClass exampleCSITStudent1 = new studentClass("David Burke",21,"17/04/1996","CSIT");
+        //String usernameECE = exampleECEStudent.getUsername();
+        //System.out.println(usernameECE);
+        //String usernameCSIT = exampleCSITStudent.getUsername();
+        //System.out.println(usernameCSIT);
+        exampleECEStudent.students();
     }
 }

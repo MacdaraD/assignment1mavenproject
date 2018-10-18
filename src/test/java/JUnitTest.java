@@ -41,7 +41,7 @@ public class JUnitTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void getUsername() {
+    public void getUsername_Test() {
         studentClass exampleStudent = new studentClass("Macdara Day",22,"06/10/1996","ECE");
         String username = exampleStudent.getUsername();
         assertEquals("MDay22", username); 
