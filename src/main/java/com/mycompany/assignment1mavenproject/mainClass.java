@@ -5,12 +5,17 @@
  */
 package com.mycompany.assignment1mavenproject;
 
+import org.joda.time.LocalDate;
+
 /**
  *
  * @author MacdaraDay
  */
 public class mainClass {
-
+    
+    private String courseName = "ECE";
+    private LocalDate academicStartDate = new LocalDate(2018,9,01);
+    private LocalDate academicEndDate = new LocalDate(2018,12,22);
    
     /**
      * @param args the command line arguments
@@ -26,6 +31,8 @@ public class mainClass {
         //System.out.println(usernameECE);
         //String usernameCSIT = exampleCSITStudent.getUsername();
         //System.out.println(usernameCSIT);
-        exampleECEStudent.students();
+        exampleECEStudent.printoutECEstudents();
+        exampleCSITStudent.printoutCSITstudents();
+        
     }
 }
