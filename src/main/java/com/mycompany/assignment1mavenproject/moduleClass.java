@@ -15,7 +15,8 @@ public class moduleClass {
     
     private String moduleName;
     private String moduleCode;
-    private ArrayList<String> students;
+    private String name;
+    private ArrayList<studentClass> students = new ArrayList<studentClass>();
     private ArrayList<String> courses;
     
     public moduleClass(String moduleName, String moduleCode){
@@ -23,11 +24,15 @@ public class moduleClass {
         this.moduleCode = moduleCode;
     }
     
-    public void addStudents(String name){
-        students.add(name);
+    public void printStudents(){
+        System.out.println(moduleName +" students are ");
+        for(studentClass temp : students){
+            String student = temp.getName() +" "+ temp.getUsername();
+            System.out.println(student);
+        }
     }
-    
-    public ArrayList<String> getStudents(){
-        return students;
+
+    public void addStudents(studentClass ECEStudent1) {
+        students.add(ECEStudent1);
     }
 }

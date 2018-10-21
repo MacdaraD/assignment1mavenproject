@@ -5,6 +5,7 @@
  */
 package com.mycompany.assignment1mavenproject;
 
+import java.util.ArrayList;
 import org.joda.time.LocalDate;
 
 /**
@@ -23,16 +24,32 @@ public class mainClass {
     
     
     public static void main(String[] args) {
-        studentClass exampleECEStudent = new studentClass("Macdara Day",22,"06/10/1996","ECE");
-        studentClass exampleCSITStudent = new studentClass("Conn O'Flynn",21,"23/08/1996","CSIT");
-        studentClass exampleECEStudent1 = new studentClass("Ronan Murphy",20,"30/01/1998","ECE");
-        studentClass exampleCSITStudent1 = new studentClass("David Burke",21,"17/04/1996","CSIT");
-        //String usernameECE = exampleECEStudent.getUsername();
-        //System.out.println(usernameECE);
-        //String usernameCSIT = exampleCSITStudent.getUsername();
-        //System.out.println(usernameCSIT);
-        exampleECEStudent.printoutECEstudents();
-        exampleCSITStudent.printoutCSITstudents();
+        studentClass ECEStudent1 = new studentClass("Macdara Day",22,"06/10/1996","ECE");
+        studentClass CSITStudent1 = new studentClass("Conn O'Flynn",21,"23/08/1996","CSIT");
+        studentClass ECEStudent2 = new studentClass("Ronan Murphy",20,"30/01/1998","ECE");
+        studentClass CSITStudent2 = new studentClass("David Burke",21,"17/04/1996","CSIT");
         
+        moduleClass SystemonChip = new moduleClass("System on Chip", "EE451");
+        moduleClass SoftwareEngineering = new moduleClass("Software Engineering", "CT417");
+        moduleClass WebDesign = new moduleClass("Web Design", "CT419");
+        
+        SystemonChip.addStudents(ECEStudent1);
+        SoftwareEngineering.addStudents(ECEStudent1);
+        SoftwareEngineering.addStudents(CSITStudent1);
+        WebDesign.addStudents(CSITStudent1);
+        SystemonChip.addStudents(ECEStudent2);
+        SoftwareEngineering.addStudents(ECEStudent2);
+        SoftwareEngineering.addStudents(CSITStudent2);
+        WebDesign.addStudents(CSITStudent2);
+        
+        
+        String name = ECEStudent1.getName();
+        String course = ECEStudent1.getCourse();
+        String username = ECEStudent1.getUsername();
+        
+        System.out.println("ECEStudent1 deatails: \n" +" Name: "+name +"\n Course: "+course +"\n Username: " +username+("\n\n"));
+        SoftwareEngineering.printStudents();
+        SystemonChip.printStudents();
+        //System.out.println("Software Engineering students: "+teststudents);
     }
 }

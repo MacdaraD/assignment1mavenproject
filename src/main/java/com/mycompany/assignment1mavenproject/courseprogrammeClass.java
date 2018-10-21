@@ -29,7 +29,7 @@ public class courseprogrammeClass {
     
     public courseprogrammeClass(String studentName,String courseName, LocalDate academicStartDate,LocalDate academicEndDate) {
        this.studentName = studentName;
-        this.courseName = courseName;
+       this.courseName = courseName;
        this.academicStartDate = academicStartDate;
        this.academicEndDate = academicEndDate;
     }
@@ -49,33 +49,15 @@ public class courseprogrammeClass {
     public void addCourse(String studentName){
         if("ECE".equals(courseName)){
             ECEstudents.add(studentName);
-            addECEmodules();
+            //addECEmodules();
         }
         else if("CSIT".equals(courseName)){
             CSITstudents.add(studentName);
-            addCSITmodules();
+            //addCSITmodules();
         }
         else{
             System.out.println("Course "+courseName+" not found.");
         }
-    }
-    public void addECEmodules(){
-        for(String temp : ECEmodules){
-            
-            System.out.println("Attempting to add "+studentName +" to "+temp);
-        }
-    }
-    public void addCSITmodules(){
-        for(String temp : CSITmodules){
-            
-            System.out.println("Attempting to add "+studentName +" to "+temp);
-        }
-    }
-    public static ArrayList getECEstudents(){
-        return ECEstudents;
-    }
-    public static ArrayList getCSITstudents(){
-        return CSITstudents;
     }
     public void Students(){
         System.out.println("ECE students "+ECEstudents);

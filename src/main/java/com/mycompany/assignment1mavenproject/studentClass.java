@@ -57,7 +57,7 @@ public class studentClass {
     }
     public void addtoCourse(String courseName, LocalDate academicStartDate,LocalDate academicEndDate){
        courseprogrammeClass Course = new courseprogrammeClass(name, courseName, academicStartDate, academicEndDate);
-        Course.addCourse(name);
+       Course.addCourse(name);
     }
     public int getID(){
         return ID;
@@ -69,16 +69,8 @@ public class studentClass {
         return username;
     }
     public String getCourse(){
+        
         return course;
-    }
-
-    public void printoutECEstudents() {
-         ArrayList<String> ECEnames = courseprogrammeClass.getECEstudents();
-         System.out.println("ECE students are: "+ECEnames);
-    }
-    public void printoutCSITstudents() {
-         ArrayList<String> CSITnames = courseprogrammeClass.getCSITstudents();
-         System.out.println("CSIT students are: "+CSITnames);
     }
 }
 
