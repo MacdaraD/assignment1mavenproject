@@ -25,11 +25,12 @@ public class moduleClass {
     }
     
     public void printStudents(){
-        System.out.println(moduleName +" students are ");
+        System.out.print(moduleName +" students are: ");
         for(studentClass temp : students){
-            String student = temp.getName() +" "+ temp.getUsername();
-            System.out.println(student);
+            String student = temp.getName() +" ("+ temp.getUsername() +"), ";
+            System.out.print(student);
         }
+        System.out.println();
     }
 
     public void addStudents(studentClass ECEStudent1) {
