@@ -15,11 +15,11 @@ import org.joda.time.LocalDate;
  */
 public class courseprogrammeClass {
     
-    private static ArrayList<String> ECEmodules = new ArrayList<String>(Arrays.asList("System on Chip","Software Engineering"));
-    private static ArrayList<String> CSITmodules = new ArrayList<String>(Arrays.asList("Software Engineering", "Web Design"));
+    private ArrayList<String> modules = new ArrayList<String>();
+    //private static ArrayList<String> CSITmodules = new ArrayList<String>(Arrays.asList("Software Engineering", "Web Design"));
     private static ArrayList<studentClass> SystemonChip = new ArrayList<studentClass>(); 
-    private static ArrayList<String> ECEstudents = new ArrayList<String>();
-    private static ArrayList<String> CSITstudents = new ArrayList<String>();
+    private static ArrayList<String> allstudents = new ArrayList<String>();
+    private ArrayList<String> students = new ArrayList<String>();
     //private static moduleClass modules = new moduleClass();
     private String studentName;
     private String courseName;
@@ -34,9 +34,17 @@ public class courseprogrammeClass {
        this.academicEndDate = academicEndDate;
     }
 
-    courseprogrammeClass() {
+    public courseprogrammeClass(String module1, String module2) {
+        modules.add(module1);
+        modules.add(module2);
     }
-
+    public String getModules(){
+        String module = "";
+        for (String temp : modules){
+            module += temp + " ";
+        }
+        return module;
+    }
     public String getcourseName(){
         return courseName;
     }
@@ -47,20 +55,14 @@ public class courseprogrammeClass {
         return academicEndDate;
     }
     public void addCourse(String studentName){
-        if("ECE".equals(courseName)){
-            ECEstudents.add(studentName);
-            //addECEmodules();
-        }
-        else if("CSIT".equals(courseName)){
-            CSITstudents.add(studentName);
-            //addCSITmodules();
-        }
-        else{
-            System.out.println("Course "+courseName+" not found.");
-        }
+       allstudents.add(studentName);
+       students.add(studentName);
     }
-    public void Students(){
-        System.out.println("ECE students "+ECEstudents);
-        System.out.println("CS&IT students "+CSITstudents);
+    public String getallStudents(){
+        String student = "";
+        for(String temp : allstudents){
+            student += temp + " ";
+        }
+        return student;
     }
 }
