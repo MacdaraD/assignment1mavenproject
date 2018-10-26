@@ -19,7 +19,7 @@ public class studentClass {
     private String course;
     private LocalDate academicStartDate = new LocalDate(2018,9,01);
     private LocalDate academicEndDate = new LocalDate(2018,12,22);
-    
+    private static ArrayList<String> allusernames = new ArrayList<String>();
    
     public studentClass(){
     }
@@ -45,6 +45,7 @@ public class studentClass {
         username = a_char + splited[1] + age;
         setID();
         ID = getID();
+        allusernames.add(username);
     }
     public void setID(){
         if(ID==0){
@@ -65,11 +66,17 @@ public class studentClass {
     public int getAge(){
         return age;
     }
+    public String getallUsernames(){
+        String user = "";
+        for(String temp : allusernames){
+            user += temp + " ";
+        }
+        return user;
+    }
     public String getUsername(){
         return username;
     }
     public String getCourse(){
-        
         return course;
     }
 }
